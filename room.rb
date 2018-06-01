@@ -14,9 +14,15 @@ class Room
 
   def guest_taker(queue)
     queue.each do |guest|
-      if guest.wallet>@fee
-        @guests_inside.push(guest)
-        guest.wallet -= @fee
+      if @guests_inside.length < @capacity
+        if guest.wallet > @fee
+          @guests_inside.push(guest)
+          guest.wallet -= @fee
+        else
+        p "Sorry man, can't take in without the fee"
+        end
+      else
+        p "Sorry man, the room's full"
       end
     end
   end
