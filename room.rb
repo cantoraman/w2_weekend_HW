@@ -28,16 +28,27 @@ class Room
   end
 
   def guest_remover(names)
+    remove_count=names.length
     removed_list = []
+    unfound = []
     for name in names
-      removed_list.push(@guests_inside.delete(name))
+#     removed_list.push(@guests_inside.delete(name))
+      item=@guests_inside.delete(name)
+      if item!=nil
+        removed_list.push(item)
+      else
+        unfound.push(item)
+      end
+
     end
-    if removed_list.length != 0
-      p "These people left the premises:"
-      removed_list.each {|x| p x.name}
-    else
-      p "They were not inside."
+    if removed_list.length>0
+    p "These people left the premises:"
+    removed_list.each {|x| p x.name}
     end
+
+    unfound.each {|y| p "#{y.name} was not inside."} if unfound.length > 0
+
+
   end
 
 

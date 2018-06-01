@@ -11,7 +11,7 @@ class RoomTest < Minitest::Test
     @guest3 = Guest.new("George", 30, "A Hard Day's Night")
     @guest4 = Guest.new("Ringo", 40, "With A Little Help From My Friends")
     @guest5 = Guest.new("Pete", 10, "Twist and Shout")
-    @guest5 = Guest.new("James", 60, "The Unforgiven")
+    @guest6 = Guest.new("James", 60, "The Unforgiven")
     @guest7 = Guest.new("Bob", 3, "Blowin in the Wind")
 
     @song1 = Song.new("Can't Buy Me Love", 2.11)
@@ -49,19 +49,24 @@ class RoomTest < Minitest::Test
     assert_equal(false, @room1.guests_inside.include?(@guest7))
   end
 
+
+  def test_check_guests_out__removes_2
+    skip
+    queue0 = [@guest1, @guest2, @guest3, @guest4]
+    @room1.guest_taker(queue0)
+    @room1.guest_remover([@guest2, @guest3])
+    assert_equal(2, @room1.guests_inside.length)
+  end
+
+  def test_check_guests_out__no_guest_to_remove
+    skip
+    queue0 = [@guest1, @guest2, @guest3, @guest4]
+    @room1.guest_taker(queue0)
+    @room1.guest_remover([@guest5, @guest6])
+    assert_equal(4, @room1.guests_inside.length)
+  end
+
 end
-
-def test_check_guests_out__removes_2
-  queue0 = [@guest1, @guest2, @guest3, @guest4]
-  #Normal queue
-  @room1.guest_taker(queue0)
-  @room1.guest_remover(@guest2, @guest3)
-  assert_equal(2, @room1.guests_inside.length)
-end
-
-
-
-
 
 # Create rooms, songs and guests
 # Check in guests to rooms/Check out guests from rooms
