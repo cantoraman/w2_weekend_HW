@@ -1,8 +1,19 @@
+require ("minitest/autorun")
+require_relative("../guest.rb")
+
+class GuestTest < Minitest::Test
+
+  def setup
+    @guest1 = Guest.new("John", 100, "Can't Buy Me Love")
+    @guest2 = Guest.new("Paul", 50, "All My Loving")
+    @guest3 = Guest.new("George", 30, "A Hard Day's Night")
+    @guest4 = Guest.new("Ringo", 40, "With A Little Help From My Friends")
+  end
 
 
-
-
-
+  def test_guest_name
+    assert_equal("Paul", @guest2.name)
+  end
 
 
 
