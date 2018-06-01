@@ -1,6 +1,7 @@
 require ("minitest/autorun")
 require_relative("../guest.rb")
 require_relative("../song.rb")
+require_relative("../room.rb")
 
 class RoomTest < Minitest::Test
 
@@ -18,10 +19,14 @@ class RoomTest < Minitest::Test
     @song3 = Song.new("All My Loving", 2.04)
     @song4 = Song.new("With A Little Help From My Friends", 2.44)
     @song5 = Song.new("I Saw Her Standing There", 2.55)
+    songs=[@song1,@song2,@song3,@song4,@song5]
+    @room1 = Room.new(1, 0, songs, 4)
   end
 
 
-
+  def test_room_song_list
+    assert_equal(5, @room1.song_list.length)
+  end
 
 
 end
