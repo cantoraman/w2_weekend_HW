@@ -47,8 +47,10 @@ class Room
     removed_list.each {|x| p x.name}
     end
     unfound.each {|y| p "#{y.name} was not inside."} if unfound.length > 0
+  end
 
-
+  def start_playing()
+    @song_list.each { |song| song.play_song() }
   end
 
 

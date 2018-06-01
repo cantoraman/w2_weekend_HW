@@ -34,6 +34,14 @@ class RoomTest < Minitest::Test
     assert_equal(4, @room1.guests_inside.length)
   end
 
+  def test_check_guests_in__normal__play_the_list
+    queue0 = [@guest1, @guest2, @guest3, @guest4]
+    #Normal queue
+    @room1.guest_taker(queue0)
+    @room1.start_playing()
+    assert_equal(4, @room1.guests_inside.length)
+  end
+
   def test_check_guests_in__extra_guest
     queue1 = [@guest1, @guest2, @guest3, @guest4, @guest5] #Extra guest
     @room1.guest_taker(queue1)
@@ -48,7 +56,6 @@ class RoomTest < Minitest::Test
     assert_equal(true, @room1.guests_inside.include?(@guest3))
     assert_equal(false, @room1.guests_inside.include?(@guest7))
   end
-
 
   def test_check_guests_out__removes_2
     queue0 = [@guest1, @guest2, @guest3, @guest4]
