@@ -16,6 +16,13 @@ class GuestTest < Minitest::Test
   end
 
 
+    def test_guest_wallet
+      assert_equal(30, @guest3.wallet)
+    end
+
+
+end
+
 
 
 
