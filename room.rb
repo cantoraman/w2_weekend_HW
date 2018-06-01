@@ -19,6 +19,7 @@ class Room
           @guests_inside.push(guest)
           guest.wallet -= @fee
           @till+=@fee
+          
         else
         p "Sorry #{guest.name}, can't take in without the fee"
         end
@@ -33,7 +34,6 @@ class Room
     removed_list = []
     unfound = []
     for name in names
-#     removed_list.push(@guests_inside.delete(name))
       item=@guests_inside.delete(name)
       if item!=nil
         removed_list.push(item)
