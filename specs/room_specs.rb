@@ -51,7 +51,6 @@ class RoomTest < Minitest::Test
 
 
   def test_check_guests_out__removes_2
-    skip
     queue0 = [@guest1, @guest2, @guest3, @guest4]
     @room1.guest_taker(queue0)
     @room1.guest_remover([@guest2, @guest3])
@@ -64,6 +63,15 @@ class RoomTest < Minitest::Test
     @room1.guest_remover([@guest5, @guest6])
     assert_equal(4, @room1.guests_inside.length)
   end
+
+  def test_check_guests_out__1in_1not
+    queue0 = [@guest1, @guest2, @guest3, @guest4]
+    @room1.guest_taker(queue0)
+    @room1.guest_remover([@guest2, @guest6])
+    assert_equal(3, @room1.guests_inside.length)
+  end
+
+
 
 end
 

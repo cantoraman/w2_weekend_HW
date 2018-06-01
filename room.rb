@@ -18,6 +18,7 @@ class Room
         if guest.wallet > @fee
           @guests_inside.push(guest)
           guest.wallet -= @fee
+          @till+=@fee
         else
         p "Sorry #{guest.name}, can't take in without the fee"
         end
