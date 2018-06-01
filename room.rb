@@ -19,7 +19,7 @@ class Room
           @guests_inside.push(guest)
           guest.wallet -= @fee
           @till+=@fee
-          
+          guest.check_the_songs(@song_list)
         else
         p "Sorry #{guest.name}, can't take in without the fee"
         end
