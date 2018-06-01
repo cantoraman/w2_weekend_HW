@@ -1,3 +1,20 @@
+require ("minitest/autorun")
+require_relative("../song.rb")
+
+class SongTest < Minitest::Test
+
+  def setup
+    @song1 = Song.new("Can't Buy Me Love", 2.11)
+    @song2 = Song.new("A Hard Day's Night", 2.32)
+    @song3 = Song.new("All My Loving", 2.04)
+    @song4 = Song.new("With A Little Help From My Friends", 2.44)
+    @song5 = Song.new("I Saw Her Standing There", 2.55)
+  end
+
+
+  def test_song_name
+    assert_equal("Can't Buy Me Love", @song1.name)
+  end
 
 
 
@@ -9,6 +26,7 @@
 
 
 
+end
 
 
 
