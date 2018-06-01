@@ -14,6 +14,7 @@ class Guest
     song_list.each{|x| name_list.push(x.name)}
     if (name_list.include?(@fav_song))
       system('say "Woo" ')
+      p "Whooo!"
     end
   end
 

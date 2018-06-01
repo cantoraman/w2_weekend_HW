@@ -12,7 +12,7 @@ class Song
     system('say "Lalalalala" ')
     minutes=length.to_i
     seconds=((length-minutes)*100).to_i
-    return "#{@name} has been played for #{minutes} minutes and #{seconds} seconds"
+    p "#{@name} has been played for #{minutes} minutes and #{seconds} seconds"
   end
 
 

@@ -10,6 +10,7 @@ class Room
     @capacity = capacity
     @guests_inside = []
     @fee = fee
+    @bar_tab = []
   end
 
   def guest_taker(queue)
@@ -19,14 +20,18 @@ class Room
           @guests_inside.push(guest)
           guest.wallet -= @fee
           @till+=@fee
-          guest.check_the_songs(@song_list)
+          @bar_tab.push("Customer #{guest.name} paid #{@fee} pounds")
+          #guest.check_the_songs(@song_list)
         else
         p "Sorry #{guest.name}, can't take in without the fee"
+        @bar_tab.push("Customer #{guest.name} tried to get in without payin but got refused.")
         end
       else
         p "Sorry #{guest.name}, the room's full"
+        @bar_tab.push("Customer #{guest.name} tried to get in but the room was full")
       end
     end
+    p @bar_tab
   end
 
   def guest_remover(names)
