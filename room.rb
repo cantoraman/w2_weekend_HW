@@ -27,5 +27,17 @@ class Room
     end
   end
 
+  def guest_remover(names)
+    removed_list = []
+    for name in names
+      removed_list.push(@guests_inside.delete(name))  
+    end
+
+  end
+
+
+
+
+
 
 end
