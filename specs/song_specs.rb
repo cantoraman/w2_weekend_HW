@@ -20,7 +20,9 @@ class SongTest < Minitest::Test
     assert_equal(2.55, @song5.length)
   end
 
-
+  def test_play_song
+    assert_equal("All My Loving has been played for 2 minutes and 4 seconds", @song3.play_song())
+  end
 
 
 

@@ -8,11 +8,12 @@ class Song
   end
 
 
-#system('say "beep"')
-
-
-
-
+  def play_song()
+    system('say "beep"')
+    minutes=length.to_i
+    seconds=((length-minutes)*100).to_i
+    return "#{@name} has been played for #{minutes} minutes and #{seconds} seconds"
+  end
 
 
 end
