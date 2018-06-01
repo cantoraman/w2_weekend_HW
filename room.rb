@@ -21,7 +21,7 @@ class Room
           guest.wallet -= @fee
           @till+=@fee
           @bar_tab.push("Customer #{guest.name} paid #{@fee} pounds")
-          #guest.check_the_songs(@song_list)
+          guest.check_the_songs(@song_list)
         else
         p "Sorry #{guest.name}, can't take in without the fee"
         @bar_tab.push("Customer #{guest.name} tried to get in without payin but got refused.")
@@ -31,7 +31,6 @@ class Room
         @bar_tab.push("Customer #{guest.name} tried to get in but the room was full")
       end
     end
-    p @bar_tab
   end
 
   def guest_remover(names)

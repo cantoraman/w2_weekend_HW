@@ -38,7 +38,7 @@ class RoomTest < Minitest::Test
     queue0 = [@guest1, @guest2, @guest3, @guest4]
     #Normal queue
     @room1.guest_taker(queue0)
-    #@room1.start_playing()
+    @room1.start_playing()
     assert_equal(4, @room1.guests_inside.length)
   end
 
