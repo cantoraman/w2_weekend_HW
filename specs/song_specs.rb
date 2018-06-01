@@ -16,7 +16,9 @@ class SongTest < Minitest::Test
     assert_equal("Can't Buy Me Love", @song1.name)
   end
 
-
+  def test_song_length
+    assert_equal(2.55, @song5.length)
+  end
 
 
 
