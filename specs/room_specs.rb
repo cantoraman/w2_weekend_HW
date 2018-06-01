@@ -51,7 +51,13 @@ class RoomTest < Minitest::Test
 
 end
 
-
+def test_check_guests_out__removes_2
+  queue0 = [@guest1, @guest2, @guest3, @guest4]
+  #Normal queue
+  @room1.guest_taker(queue0)
+  @room1.guest_remover(@guest2, @guest3)
+  assert_equal(2, @room1.guests_inside.length)
+end
 
 
 

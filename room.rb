@@ -30,9 +30,14 @@ class Room
   def guest_remover(names)
     removed_list = []
     for name in names
-      removed_list.push(@guests_inside.delete(name))  
+      removed_list.push(@guests_inside.delete(name))
     end
-
+    if removed_list.length != 0
+      p "These people left the premises:"
+      removed_list.each {|x| p x.name}
+    else
+      p "They were not inside."
+    end
   end
 
 
