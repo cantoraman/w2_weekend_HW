@@ -19,10 +19,10 @@ class Room
           @guests_inside.push(guest)
           guest.wallet -= @fee
         else
-        p "Sorry man, can't take in without the fee"
+        p "Sorry #{guest.name}, can't take in without the fee"
         end
       else
-        p "Sorry man, the room's full"
+        p "Sorry #{guest.name}, the room's full"
       end
     end
   end

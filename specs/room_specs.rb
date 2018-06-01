@@ -35,17 +35,18 @@ class RoomTest < Minitest::Test
   end
 
   def test_check_guests_in__extra_guest
-    skip
     queue1 = [@guest1, @guest2, @guest3, @guest4, @guest5] #Extra guest
-
-    assert_equal()
+    @room1.guest_taker(queue1)
+    assert_equal(true, @room1.guests_inside.include?(@guest2))
+    assert_equal(false, @room1.guests_inside.include?(@guest5))
   end
 
   def test_check_guests_in__poorman
-    skip
     queue2 = [@guest1, @guest7, @guest3, @guest4]
+    @room1.guest_taker(queue2)
     #Poor man in the second place
-    assert_equal()
+    assert_equal(true, @room1.guests_inside.include?(@guest3))
+    assert_equal(false, @room1.guests_inside.include?(@guest7))
   end
 
 end
