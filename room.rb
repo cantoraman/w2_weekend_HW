@@ -37,7 +37,7 @@ class Room
       if item!=nil
         removed_list.push(item)
       else
-        unfound.push(item)
+        unfound.push(name)
       end
 
     end
@@ -45,7 +45,6 @@ class Room
     p "These people left the premises:"
     removed_list.each {|x| p x.name}
     end
-
     unfound.each {|y| p "#{y.name} was not inside."} if unfound.length > 0
 
 

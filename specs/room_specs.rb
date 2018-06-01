@@ -59,7 +59,6 @@ class RoomTest < Minitest::Test
   end
 
   def test_check_guests_out__no_guest_to_remove
-    skip
     queue0 = [@guest1, @guest2, @guest3, @guest4]
     @room1.guest_taker(queue0)
     @room1.guest_remover([@guest5, @guest6])
