@@ -1,19 +1,30 @@
+require ("minitest/autorun")
+require_relative("../guest.rb")
+require_relative("../song.rb")
+
+class RoomTest < Minitest::Test
+
+  def setup
+    @guest1 = Guest.new("John", 100, "Can't Buy Me Love")
+    @guest2 = Guest.new("Paul", 50, "All My Loving")
+    @guest3 = Guest.new("George", 30, "A Hard Day's Night")
+    @guest4 = Guest.new("Ringo", 40, "With A Little Help From My Friends")
+    @guest4 = Guest.new("Pete", 10, "Twist and Shout")
+    @guest4 = Guest.new("James", 60, "The Unforgiven")
+    @guest4 = Guest.new("Bob", 3, "Blowin in the Wind")
+
+    @song1 = Song.new("Can't Buy Me Love", 2.11)
+    @song2 = Song.new("A Hard Day's Night", 2.32)
+    @song3 = Song.new("All My Loving", 2.04)
+    @song4 = Song.new("With A Little Help From My Friends", 2.44)
+    @song5 = Song.new("I Saw Her Standing There", 2.55)
+  end
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+end
 
 
 

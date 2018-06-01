@@ -23,7 +23,7 @@ class GuestTest < Minitest::Test
   def test_guest_fav_song
     assert_equal("A Hard Day's Night", @guest3.fav_song)
   end
-  
+
 
 end
 
